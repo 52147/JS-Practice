@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="myDiv">
+      <button id="myBtn">Click me!</button>
+    </div>
+
+    <script>
+      // Event Bubbling
+      document.getElementById("myBtn").addEventListener("click", function () {
+        alert("Button (Child) Clicked - Event Bubbling");
+      });
+
+      document.getElementById("myDiv").addEventListener("click", function () {
+        alert("Div (Parent) Clicked - Event Bubbling");
+      });
+
+      // Event Capturing
+      document.getElementById("myDiv").addEventListener(
+        "click",
+        function () {
+          alert("Div (Parent) Clicked - Event Capturing");
+        },
+        true
+      ); // Notice the third parameter, true, for useCapture
+
+      document.getElementById("myBtn").addEventListener(
+        "click",
+        function () {
+          alert("Button (Child) Clicked - Event Capturing");
+        },
+        true
+      ); // Notice the third parameter, true, for useCapture
+    </script>
+  </body>
+</html>
