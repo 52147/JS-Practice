@@ -6,12 +6,18 @@ const person = {
     console.log("Hello, my name is " + this.name);
   },
 };
+console.log(person.name);
+console.log(person.age);
+person.greet();
 
 // 2.Prototypes:
+
+// Constructor function
 function Dog(name) {
   this.name = name;
 }
 
+// Add a method to the prototype
 Dog.prototype.bark = function () {
   console.log(this.name + " barks!");
 };
